@@ -5,6 +5,7 @@ pipeline {
   stages {
     
     stage('Build'){
+      steps {
       agent {
     kubernetes {
       label 'exmaple-kaniko-volume'
@@ -33,6 +34,7 @@ spec:
 """            
     }
   }
+    }
     }
 
     stage('Deploy App') {
