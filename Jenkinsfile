@@ -6,7 +6,7 @@ pipeline {
             steps {
                 container('kaniko') {
                     sh '''executor \
-                          --destination=docker.io/ssistla/myweb:1 \
+                          --destination=hub.docker.com/ssistla/myweb:1 \
                           --context=git://github.com/ssistla/playjenkins.git#refs/heads/master
                     '''
                 }
