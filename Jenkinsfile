@@ -1,5 +1,8 @@
 pipeline {
-  agent {
+
+  agent any 
+  
+  stages {
     kubernetes {
       label 'exmaple-kaniko-volume'
       yaml """
@@ -12,7 +15,7 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     args: ["--context=git://github.com/ssistla/playjenkins",
-            "--destination=ssistla/justme/myweb:1.0.0"]
+            "--destination=ssistla/justme/myweb:1"]
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
