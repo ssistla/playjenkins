@@ -3,6 +3,9 @@ pipeline {
   agent any 
   
   stages {
+    
+    stage('Build')
+      agent {
     kubernetes {
       label 'exmaple-kaniko-volume'
       yaml """
@@ -40,6 +43,7 @@ spec:
       }
     }
 
+  }
   }
 
 
