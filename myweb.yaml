@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: https://hub.docker.com/ssistla/justme/myweb:1
+      - image: ssistla/myweb:1
         imagePullPolicy: Always
         name: myweb
 
@@ -34,4 +34,4 @@ spec:
     targetPort: 80
   selector:
     app: myweb
-  type: LoadBalancer
+  type: ClusterIP
